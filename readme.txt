@@ -1,10 +1,10 @@
 === Tweets ===
-Contributors: weblizar
+Contributors: weblizar, precisioncoding
 Donate link: http://www.weblizar.com/
 Tags: twitter, twitter plugin, button, connect, follow button, tvet, tvett, tvit, tviter, tvitt, tweet, tweeter, twett, twit, twiter, twitter connect, tweet, twitter connect, twitter follow, twitter follow button, twitter share, twitter share button, social, button, social button, stream, tweets, twitter widget, latest tweets, add tweet, twitter shortcode, twitter button, reply, follow me, like, follow, twitter news, tweets, bitly, links, microblogging, Post, redirect, shortener, twitter, yourls, widget, plugin, wordpress twitter, twitter bootstrap, archive, integrate, integration, notify, shortcode, twitter search, twitter share, twitter share button, twitter shortcode, twitter sidebar, twitter timeline, twitter tools, twitter widget, twitter-followers, WordPress Twitter , twitter api, twitter badge, twitter button, twitter cards, twitter connect, twitter favorites, social bookmark, social bookmarking, add link to twitter, post to twitter, publish post to twitter, social media,
 Requires at least: 3.0
 Tested up to: 4.0
-Stable tag: 0.4
+Stable tag: 0.4.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -26,6 +26,7 @@ Using **Twitter Tweets** widget display your least tweets on your WordPress blog
 * Widget Title
 * Widget Theme Option
 * Set Widget Height
+* Set Tweet Count
 * Tweets URL Link Color Option
 * Show/Hide Tweets Reply
 * Add Follow Button
@@ -40,6 +41,7 @@ Using **Twitter Tweets** widget display your least tweets on your WordPress blog
 * Widget Title
 * Widget Theme Option
 * Set Widget Height
+* Set Tweet Count
 * Tweets URL Link Color Option
 * Show/Hide Tweets Reply
 * Auto Expand Photos in Tweets 
@@ -76,6 +78,9 @@ Please use WordPress support forum to ask any query regarding any issue.
 == Changelog ==
 
 For more information, see Weblizar(http://wwww.weblizar.com/).
+
+= 0.4.1 =
+* Added ability to set tweet count
 
 = 0.4 =
 * Compatible With WordPress 4.0
