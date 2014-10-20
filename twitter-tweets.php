@@ -61,6 +61,7 @@ class WeblizarTwitter extends WP_Widget {
         $Theme              =   apply_filters( 'weblizar_twitter_theme', $instance['Theme'] );
         $Height             =   apply_filters( 'weblizar_twitter_height', $instance['Height'] );
         $Width              =   apply_filters( 'weblizar_twitter_width', $instance['Width'] );
+        $Tweets             =   apply_filters( 'weblizar_twitter_width', $instance['Tweets'] );
         $LinkColor          =   apply_filters( 'weblizar_twitter_link_color', $instance['LinkColor'] );
         $ExcludeReplies     =   apply_filters( 'weblizar_twitter_exclude_replies', $instance['ExcludeReplies'] );
         $AutoExpandPhotos   =   apply_filters( 'weblizar_twitter_auto_expand_photo', $instance['AutoExpandPhotos'] );
@@ -80,7 +81,7 @@ class WeblizarTwitter extends WP_Widget {
         data-tweet-limit="5"
         lang="EN">Tweets by @weblizar</a>-->
 
-        <a class="twitter-timeline" data-dnt="true" href="https://twitter.com/<?php echo $TwitterUserName; ?>" min-width="<?php echo $Width; ?>" height="<?php echo $Height; ?>" data-theme="<?php echo $Theme; ?>" data-link-color="<?php echo $LinkColor; ?>px" data-widget-id="<?php echo $TwitterWidgetId; ?>">Twitter Tweets</a>
+        <a class="twitter-timeline" data-dnt="true" href="https://twitter.com/<?php echo $TwitterUserName; ?>" min-width="<?php echo $Width; ?>" height="<?php echo $Height; ?>" data-theme="<?php echo $Theme; ?>" data-tweet-limit="<?php echo $Tweets; ?>" data-link-color="<?php echo $LinkColor; ?>px" data-widget-id="<?php echo $TwitterWidgetId; ?>">Twitter Tweets</a>
         <script>
             !function(d,s,id) {
                 var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}
@@ -118,6 +119,11 @@ class WeblizarTwitter extends WP_Widget {
         $Width = "";
         if ( isset( $instance[ 'Width' ] ) ) {
             $Width = $instance[ 'Width' ];
+        }
+
+        $Tweets = "";
+        if ( isset( $instance[ 'Tweets' ] ) ) {
+            $Tweets = $instance[ 'Tweets' ];
         }
 
         if ( isset( $instance[ 'LinkColor' ] ) ) {
@@ -175,6 +181,11 @@ class WeblizarTwitter extends WP_Widget {
         </p>-->
 
         <p>
+            <label for="<?php echo $this->get_field_id( 'Tweets' ); ?>"><?php _e( 'Tweets' ); ?></label>
+            <input class="widefat" id="<?php echo $this->get_field_id( 'Tweets' ); ?>" name="<?php echo $this->get_field_name( 'Tweets' ); ?>" type="number" value="<?php echo esc_attr( $Tweets ); ?>">
+        </p>
+
+        <p>
             <label for="<?php echo $this->get_field_id( 'LinkColor' ); ?>"><?php _e( 'URL Link Color:' ); ?></label>
             <input class="widefat" id="<?php echo $this->get_field_id( 'LinkColor' ); ?>" name="<?php echo $this->get_field_name( 'LinkColor' ); ?>" type="text" value="<?php echo esc_attr( $LinkColor ); ?>">
             Find More Color Codes <a href="http://html-color-codes.info/" target="_blank">HERE</a>
@@ -215,6 +226,7 @@ class WeblizarTwitter extends WP_Widget {
         $instance['Theme'] = ( ! empty( $new_instance['Theme'] ) ) ? strip_tags( $new_instance['Theme'] ) : 'light';
         $instance['Height'] = ( ! empty( $new_instance['Height'] ) ) ? strip_tags( $new_instance['Height'] ) : '450';
         $instance['Width'] = ( ! empty( $new_instance['Width'] ) ) ? strip_tags( $new_instance['Width'] ) : '';
+        $instance['Tweets'] = ( ! empty( $new_instance['Tweets'] ) ) ? strip_tags( $new_instance['Tweets'] ) : '5';
         $instance['LinkColor'] = ( ! empty( $new_instance['LinkColor'] ) ) ? strip_tags( $new_instance['LinkColor'] ) : '#CC0000';
         $instance['ExcludeReplies'] = ( ! empty( $new_instance['ExcludeReplies'] ) ) ? strip_tags( $new_instance['ExcludeReplies'] ) : 'yes';
         $instance['AutoExpandPhotos'] = ( ! empty( $new_instance['AutoExpandPhotos'] ) ) ? strip_tags( $new_instance['AutoExpandPhotos'] ) : 'yes';
